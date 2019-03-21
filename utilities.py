@@ -1,6 +1,6 @@
 import os
 import time
-
+from functools import wraps
 
 def get_reformatted_headers(filepath):
     header_dict = {}
@@ -17,6 +17,7 @@ def make_dirs(directory):
 
 
 def time_it(f):
+    @wraps(f)
     def wrapper_func(*args, **kwargs):
         s = time.perf_counter()
         f(*args, **kwargs)
