@@ -2,9 +2,10 @@ import logging
 
 
 def get_logger(level: int = logging.DEBUG) -> logging.Logger:
-    logging.basicConfig(level=level)
     logger = logging.getLogger(__name__)
-    logger.addHandler(get_sys_out_handler())
+    if not logger.handlers:
+        logger.addHandler(get_sys_out_handler())
+    logger.setLevel(level)
     return logger
 
 
@@ -18,10 +19,11 @@ def get_sys_out_handler() -> logging.Handler:
     return handler
 
 
-def clear_handlers(logger: logging.Logger):
+def clear_handlers(logger: logging.Logger)->logging.Logger:
     for handler in logger.handlers[:]:
         logger.removeHandler(handler)
-
+    return logger
 
 if __name__ == '__main__':
     lgr = get_logger()
+    lgr.info("hi")
