@@ -7,4 +7,5 @@ setup(name="rshanker779_common",
       description="Common utilities",
       python_requires='>=3.5',
       packages=find_packages(),
+      test_suite="tests.utilities_test",
       )
