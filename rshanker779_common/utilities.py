@@ -28,6 +28,12 @@ def get_username() -> str:
     return getpass.getuser()
 
 
+def save_to_database(*args, **kwargs):
+    raise NotImplementedError
+
+def get_data(*args, **kwargs):
+    raise NotImplementedError
+
 def time_it(f):
     @wraps(f)
     def wrapper_func(*args, **kwargs):
