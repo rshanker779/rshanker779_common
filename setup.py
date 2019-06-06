@@ -7,6 +7,7 @@ setup(
     author_email="rshanker779@gmail.com",
     description="Common utilities",
     python_requires=">=3.5",
+    install_requires=["black"],
     packages=find_packages(),
     test_suite="tests.utilities_test",
 )
