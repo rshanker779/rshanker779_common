@@ -8,9 +8,9 @@ from typing import Dict, Union
 
 def get_reformatted_headers(filepath: Union[str, bytes]) -> Dict:
     header_dict = {}
-    with open(filepath, 'r') as f:
+    with open(filepath, "r") as f:
         for row in f:
-            header_dict[row.split(':')[0]] = row.split(':')[-1]
+            header_dict[row.split(":")[0]] = row.split(":")[-1]
     return header_dict
 
 
@@ -31,8 +31,10 @@ def get_username() -> str:
 def save_to_database(*args, **kwargs):
     raise NotImplementedError
 
+
 def get_data(*args, **kwargs):
     raise NotImplementedError
+
 
 def time_it(f):
     @wraps(f)
@@ -45,8 +47,8 @@ def time_it(f):
     return wrapper_func
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     x = get_hostname()
     y = get_username()
-    x = get_reformatted_headers(os.path.join('espn_golf', 'headers.txt'))
+    x = get_reformatted_headers(os.path.join("espn_golf", "headers.txt"))
     print()

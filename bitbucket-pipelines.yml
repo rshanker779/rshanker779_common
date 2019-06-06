@@ -10,6 +10,8 @@ pipelines:
     - step:
         caches:
           - pip
-        script: 
+        script:
+          - pip install -e git+git@bitbucket.org:rshanker779/rshanker779_common.git#egg=rshanker779_common
           - python setup.py install
           - python setup.py test
+          - black --check .

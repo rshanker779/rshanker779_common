@@ -12,5 +12,5 @@ class UtilitiesTest(unittest.TestCase):
         utils.get_username()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
