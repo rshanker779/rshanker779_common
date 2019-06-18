@@ -1,8 +1,8 @@
 import logging
 
 
-def get_logger(level: int = logging.DEBUG) -> logging.Logger:
-    logger = logging.getLogger(__name__)
+def get_logger(name: str, level: int = logging.DEBUG) -> logging.Logger:
+    logger = logging.getLogger(name)
     if not logger.handlers:
         logger.addHandler(get_sys_out_handler())
     logger.setLevel(level)
@@ -27,8 +27,6 @@ def clear_handlers(logger: logging.Logger) -> logging.Logger:
     return logger
 
 
-lgr = get_logger()
-
 if __name__ == "__main__":
-    lgr = get_logger()
+    lgr = get_logger(__name__)
     lgr.info("hi")
