@@ -56,12 +56,18 @@ def time_it(f):
         s = time.perf_counter()
         f(*args, **kwargs)
         elapsed = time.perf_counter() - s
-        print(f"{f.__name__} exectuted in {elapsed:2f} seconds")
+        logger.info(f"{f.__name__} exectuted in {elapsed:2f} seconds")
 
     return wrapper_func
 
 
 if __name__ == "__main__":
+
+    @time_it
+    def test_function():
+        time.sleep(0.5)
+
+    test_function()
     x = get_hostname()
     y = get_username()
     add_init_files(os.path.join("/home/rohan/Documents/cellular-automata"))
