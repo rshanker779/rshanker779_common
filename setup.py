@@ -10,4 +10,5 @@ setup(
     install_requires=["black", "pre-commit"],
     packages=find_packages(),
     test_suite="tests.utilities_test",
+    extras_require={"snakeviz": ["snakeviz"]},
 )

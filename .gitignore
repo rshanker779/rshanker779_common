@@ -5,4 +5,5 @@
 *.sql
 build/*
 dist/*
+*.prof
 *.egg-info/*

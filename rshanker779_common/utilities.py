@@ -1,12 +1,46 @@
-import os
-import time
-from functools import wraps
-import socket
 import getpass
-from typing import Dict, Union
+import os
+import socket
+import time
+import datetime
+from functools import wraps
+from typing import Dict, Union, Callable
+import cProfile
+import subprocess
 from rshanker779_common.logger import get_logger
 
 logger = get_logger(__name__)
+
+
+class Profiler:
+    def __init__(self, function: Callable, num_iterations: int = 100, *args, **kwargs):
+        """
+        :param function: Ay function
+        :param num_iteration: Number of calls to functio
+        :param args: Any args for the callable
+        :param kwargs: Any kwargs for the callable
+        """
+        self.raw_function = function
+        self.num_iterations = num_iterations
+        self.filename = None
+
+        def func():
+            for _ in range(self.num_iterations):
+                function(*args, **kwargs)
+
+        self.func = func
+
+    def profile(self):
+        filename = "{}_{}.prof".format(
+            self.raw_function.__name__,
+            datetime.datetime.now().strftime("%y_%m_%d_%H_%M_%S"),
+        )
+        self.filename = filename
+        cProfile.runctx("self.func()", globals(), locals(), filename)
+
+    def get_snakeviz_visualisation(self):
+        # Note this requires snakeviz lib, but since it uses subprocess it's not an explicit dependency
+        subprocess.call(["snakeviz", self.filename])
 
 
 def get_reformatted_headers(filepath: Union[str, bytes]) -> Dict:
@@ -67,8 +101,14 @@ if __name__ == "__main__":
     def test_function():
         time.sleep(0.5)
 
+    def test_add_function(x, y):
+        return str(reversed(x)) + y
+
     test_function()
     x = get_hostname()
     y = get_username()
     add_init_files(os.path.join("/home/rohan/Documents/cellular-automata"))
+    profiler = Profiler(test_add_function, 1000, "afdjsklfds", y="b")
+    profiler.profile()
+    profiler.get_snakeviz_visualisation()
     print()
