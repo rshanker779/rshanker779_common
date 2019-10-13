@@ -99,14 +99,13 @@ def get_username() -> str:
     return getpass.getuser()
 
 
-
-
 def time_it(f):
     """
 
     :param f:
     :return:
     """
+
     @wraps(f)
     def wrapper_func(*args, **kwargs):
         s = time.perf_counter()
