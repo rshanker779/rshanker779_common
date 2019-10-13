@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>rshanker779_common package &#8212; rshanker779_common  documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="rshanker779-common-package">
+<h1>rshanker779_common package<a class="headerlink" href="#rshanker779-common-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-rshanker779_common.logger">
+<span id="rshanker779-common-logger-module"></span><h2>rshanker779_common.logger module<a class="headerlink" href="#module-rshanker779_common.logger" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="rshanker779_common.logger.clear_handlers">
+<code class="sig-prename descclassname">rshanker779_common.logger.</code><code class="sig-name descname">clear_handlers</code><span class="sig-paren">(</span><em class="sig-param">logger: logging.Logger</em><span class="sig-paren">)</span> &#x2192; logging.Logger<a class="headerlink" href="#rshanker779_common.logger.clear_handlers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="rshanker779_common.logger.get_default_formatter">
+<code class="sig-prename descclassname">rshanker779_common.logger.</code><code class="sig-name descname">get_default_formatter</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; logging.Formatter<a class="headerlink" href="#rshanker779_common.logger.get_default_formatter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="rshanker779_common.logger.get_logger">
+<code class="sig-prename descclassname">rshanker779_common.logger.</code><code class="sig-name descname">get_logger</code><span class="sig-paren">(</span><em class="sig-param">name: str</em>, <em class="sig-param">level: int = 10</em><span class="sig-paren">)</span> &#x2192; logging.Logger<a class="headerlink" href="#rshanker779_common.logger.get_logger" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="rshanker779_common.logger.get_sys_out_handler">
+<code class="sig-prename descclassname">rshanker779_common.logger.</code><code class="sig-name descname">get_sys_out_handler</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; logging.Handler<a class="headerlink" href="#rshanker779_common.logger.get_sys_out_handler" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-rshanker779_common.utilities">
+<span id="rshanker779-common-utilities-module"></span><h2>rshanker779_common.utilities module<a class="headerlink" href="#module-rshanker779_common.utilities" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="rshanker779_common.utilities.Profiler">
+<em class="property">class </em><code class="sig-prename descclassname">rshanker779_common.utilities.</code><code class="sig-name descname">Profiler</code><span class="sig-paren">(</span><em class="sig-param">function: Callable</em>, <em class="sig-param">num_iterations: int = 100</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rshanker779_common.utilities.Profiler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="rshanker779_common.utilities.Profiler.get_snakeviz_visualisation">
+<code class="sig-name descname">get_snakeviz_visualisation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rshanker779_common.utilities.Profiler.get_snakeviz_visualisation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rshanker779_common.utilities.Profiler.profile">
+<code class="sig-name descname">profile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rshanker779_common.utilities.Profiler.profile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="rshanker779_common.utilities.add_init_files">
+<code class="sig-prename descclassname">rshanker779_common.utilities.</code><code class="sig-name descname">add_init_files</code><span class="sig-paren">(</span><em class="sig-param">filepath: Union[str, bytes]</em><span class="sig-paren">)</span><a class="headerlink" href="#rshanker779_common.utilities.add_init_files" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="rshanker779_common.utilities.get_data">
+<code class="sig-prename descclassname">rshanker779_common.utilities.</code><code class="sig-name descname">get_data</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rshanker779_common.utilities.get_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="rshanker779_common.utilities.get_hostname">
+<code class="sig-prename descclassname">rshanker779_common.utilities.</code><code class="sig-name descname">get_hostname</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#rshanker779_common.utilities.get_hostname" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="rshanker779_common.utilities.get_reformatted_headers">
+<code class="sig-prename descclassname">rshanker779_common.utilities.</code><code class="sig-name descname">get_reformatted_headers</code><span class="sig-paren">(</span><em class="sig-param">filepath: Union[str, bytes]</em><span class="sig-paren">)</span> &#x2192; Dict<a class="headerlink" href="#rshanker779_common.utilities.get_reformatted_headers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="rshanker779_common.utilities.get_username">
+<code class="sig-prename descclassname">rshanker779_common.utilities.</code><code class="sig-name descname">get_username</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#rshanker779_common.utilities.get_username" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="rshanker779_common.utilities.make_dirs">
+<code class="sig-prename descclassname">rshanker779_common.utilities.</code><code class="sig-name descname">make_dirs</code><span class="sig-paren">(</span><em class="sig-param">directory: Union[str, bytes]</em><span class="sig-paren">)</span> &#x2192; Union[str, bytes]<a class="headerlink" href="#rshanker779_common.utilities.make_dirs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="rshanker779_common.utilities.save_to_database">
+<code class="sig-prename descclassname">rshanker779_common.utilities.</code><code class="sig-name descname">save_to_database</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rshanker779_common.utilities.save_to_database" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="rshanker779_common.utilities.time_it">
+<code class="sig-prename descclassname">rshanker779_common.utilities.</code><code class="sig-name descname">time_it</code><span class="sig-paren">(</span><em class="sig-param">f</em><span class="sig-paren">)</span><a class="headerlink" href="#rshanker779_common.utilities.time_it" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-rshanker779_common">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-rshanker779_common" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">rshanker779_common</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, rshanker779.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/source/rshanker779_common.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
