@@ -44,6 +44,11 @@ class Profiler:
 
 
 def get_reformatted_headers(filepath: Union[str, bytes]) -> Dict:
+    """
+
+    :param filepath:
+    :return:
+    """
     header_dict = {}
     with open(filepath, "r") as f:
         for row in f:
@@ -52,12 +57,22 @@ def get_reformatted_headers(filepath: Union[str, bytes]) -> Dict:
 
 
 def make_dirs(directory: Union[str, bytes]) -> Union[str, bytes]:
+    """
+
+    :param directory:
+    :return:
+    """
     if not os.path.exists(directory):
         os.makedirs(directory)
     return directory
 
 
 def add_init_files(filepath: Union[str, bytes]):
+    """
+
+    :param filepath:
+    :return:
+    """
     for root, _, files in os.walk(filepath):
         # We need an init- if we have .py files, aren't in base dir (setup.py exists) and not already one
         needs_init_file = any(i for i in files if i.endswith(".py") and i != "setup.py")
@@ -69,22 +84,29 @@ def add_init_files(filepath: Union[str, bytes]):
 
 
 def get_hostname() -> str:
+    """
+
+    :return:
+    """
     return socket.gethostname()
 
 
 def get_username() -> str:
+    """
+
+    :return:
+    """
     return getpass.getuser()
 
 
-def save_to_database(*args, **kwargs):
-    raise NotImplementedError
-
-
-def get_data(*args, **kwargs):
-    raise NotImplementedError
 
 
 def time_it(f):
+    """
+
+    :param f:
+    :return:
+    """
     @wraps(f)
     def wrapper_func(*args, **kwargs):
         s = time.perf_counter()
