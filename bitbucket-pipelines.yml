@@ -11,6 +11,5 @@ pipelines:
         caches:
           - pip
         script:
-          - python setup.py install
-          - python setup.py test
-          - black --check .
+          - make install
+          - make test
