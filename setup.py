@@ -7,7 +7,12 @@ setup(
     author_email="rshanker779@gmail.com",
     description="Common utilities",
     python_requires=">=3.7",
-    install_requires=["black", "pre-commit", "pytest"],
+    install_requires=[
+        "black>19",
+        "pre-commit~=2.2",
+        "pytest>5.4,<6",
+        "pytest-cov~=2.8",
+    ],
     packages=find_packages(),
     extras_require={"snakeviz": ["snakeviz"]},
 )
