@@ -8,3 +8,4 @@ dist/*
 *.prof
 *.egg-info/*
 docsrc/_build/*
+*.coverage

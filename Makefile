@@ -3,4 +3,4 @@ install:
 
 test:
 	black --check .
-	pytest
+	pytest --cov 'rshanker779_common' --cov-fail-under 40
