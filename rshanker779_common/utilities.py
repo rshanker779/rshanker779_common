@@ -27,6 +27,7 @@ class Profiler:
         # TODO - measure function once to estimate profiling iterations
         # Output to a temp dir
         # write some more generic decorators
+        # TODO this should be able to be used as a decorator
         def func():
             for _ in range(self.num_iterations):
                 function(*args, **kwargs)
