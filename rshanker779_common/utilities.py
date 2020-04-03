@@ -7,6 +7,7 @@ from functools import wraps
 from typing import Dict, Union, Callable
 import cProfile
 import subprocess
+import tempfile
 from rshanker779_common.logger import get_logger
 
 logger = get_logger(__name__)
@@ -15,32 +16,38 @@ logger = get_logger(__name__)
 class Profiler:
     def __init__(self, function: Callable, num_iterations: int = 100, *args, **kwargs):
         """
-        :param function: Ay function
-        :param num_iteration: Number of calls to functio
+        :param function: Any function
+        :param num_iteration: Number of calls to function
         :param args: Any args for the callable
         :param kwargs: Any kwargs for the callable
         """
         self.raw_function = function
         self.num_iterations = num_iterations
         self.filename = None
-
+        # TODO - measure function once to estimate profiling iterations
+        # Output to a temp dir
+        # write some more generic decorators
         def func():
             for _ in range(self.num_iterations):
                 function(*args, **kwargs)
 
-        self.func = func
+        self._func = func
+        self.temporary_directory = tempfile.mkdtemp()
 
     def profile(self):
         filename = "{}_{}.prof".format(
             self.raw_function.__name__,
             datetime.datetime.now().strftime("%y_%m_%d_%H_%M_%S"),
         )
-        self.filename = filename
-        cProfile.runctx("self.func()", globals(), locals(), filename)
+        self.filename = os.path.join(self.temporary_directory, filename)
+        cProfile.runctx("self._func()", globals(), locals(), self.filename)
 
     def get_snakeviz_visualisation(self):
         # Note this requires snakeviz lib, but since it uses subprocess it's not an explicit dependency
         subprocess.call(["snakeviz", self.filename])
+
+    def clean_up(self):
+        os.remove(self.filename)
 
 
 def get_reformatted_headers(filepath: Union[str, bytes]) -> Dict:
@@ -131,5 +138,8 @@ if __name__ == "__main__":
     add_init_files(os.path.join("/home/rohan/Documents/cellular-automata"))
     profiler = Profiler(test_add_function, 1000, "afdjsklfds", y="b")
     profiler.profile()
-    profiler.get_snakeviz_visualisation()
+    try:
+        profiler.get_snakeviz_visualisation()
+    except:
+        profiler.clean_up()
     print()
