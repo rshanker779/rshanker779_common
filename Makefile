@@ -3,7 +3,7 @@ install:
 
 test:
 	black --check .
-	pytest --cov 'rshanker779_common' --cov-fail-under 50
+	pytest --cov 'rshanker779_common' --cov-fail-under 70
 
 extras:
 	pip install .[snakeviz]

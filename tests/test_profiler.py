@@ -1,6 +1,6 @@
 import pathlib
 import pytest
-import rshanker779_common.utilities as utils
+import rshanker779_common as utils
 
 
 @pytest.fixture
@@ -9,16 +9,6 @@ def example_function():
         return str(reversed(x)) + y
 
     return example_string_function
-
-
-def test_get_hostname():
-    """Test no error thrown"""
-    utils.get_hostname()
-
-
-def test_get_username():
-    """Test no error thrown"""
-    utils.get_username()
 
 
 def test_profiler(example_function):
