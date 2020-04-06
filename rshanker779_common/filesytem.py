@@ -8,14 +8,8 @@ logger = get_logger(__name__)
 
 
 def make_dirs(directory: Union[str, bytes]) -> pathlib.Path:
-    """
-
-    :param directory:
-    :return:
-    """
     directory = pathlib.Path(directory)
-    if not os.path.exists(directory):
-        os.makedirs(directory)
+    directory.mkdir(parents=True, exist_ok=True)
     return directory
 
 
