@@ -9,3 +9,4 @@ dist/*
 *.egg-info/*
 docsrc/_build/*
 *.coverage
+htmlcov/*

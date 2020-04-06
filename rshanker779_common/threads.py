@@ -1,14 +1,14 @@
 import datetime
 import logging
 import threading
-import time
-from abc import ABC, abstractmethod
+import abc
 from typing import Hashable, Optional, Any, Set
+import time
 
 logger = logging.getLogger(__name__)
 
 
-class RegularRunnableThread(threading.Thread, ABC):
+class RegularRunnableThread(threading.Thread, abc.ABC):
     _process_map: Set[Hashable] = set()
 
     def __init__(
@@ -17,7 +17,7 @@ class RegularRunnableThread(threading.Thread, ABC):
         daemon: bool = False,
         error_delay: datetime.timedelta = datetime.timedelta(seconds=5),
     ):
-        ABC.__init__(self)
+        abc.ABC.__init__(self)
         threading.Thread.__init__(self)
 
         self.daemon = daemon
@@ -58,6 +58,6 @@ class RegularRunnableThread(threading.Thread, ABC):
     def stop_running(self):
         self.stop = True
 
-    @abstractmethod
+    @abc.abstractmethod
     def do_task(self) -> None:
         pass

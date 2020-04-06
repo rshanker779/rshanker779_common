@@ -50,7 +50,3 @@ def test_multi_cache():
     end = time.time() - start
     assert res2 == 2
     assert end > 1
-
-
-if __name__ == "__main__":
-    test_multi_cache()

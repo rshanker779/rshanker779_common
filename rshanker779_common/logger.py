@@ -25,8 +25,3 @@ def clear_handlers(logger: logging.Logger) -> logging.Logger:
     for handler in logger.handlers[:]:
         logger.removeHandler(handler)
     return logger
-
-
-if __name__ == "__main__":
-    lgr = get_logger(__name__)
-    lgr.info("hi")

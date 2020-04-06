@@ -13,14 +13,6 @@ class CachingStrategy:
         self.attr_name = attr_name
         self.load_method = load_method
 
-    def __repr__(self):
-        return "<{}, attr_name: {}, load_method: {}>".format(
-            self.__class__.__name__, self.attr_name, self.load_method
-        )
-
-    def __str__(self):
-        return repr(self)
-
 
 class Cache:
     def __init__(self, *strategies: CachingStrategy):
