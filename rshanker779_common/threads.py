@@ -43,16 +43,8 @@ class RegularRunnableThread(threading.Thread, abc.ABC):
                     self.do_task()
                     self.last_run_time = now
             except Exception:
-                logging.exception("An error occurred")
+                logger.exception("An error occurred")
                 time.sleep(self.error_delay.total_seconds())
-
-    def ensure_single_process(self, unique_id: Optional[Hashable] = None):
-        process_name = unique_id if unique_id is not None else self.__class__.__name__
-        if process_name in self._process_map:
-            raise threading.ThreadError(
-                "Only one thread is allowed to run for this process"
-            )
-        self._process_map.add(process_name)
 
     def stop_running(self):
         self.stop = True

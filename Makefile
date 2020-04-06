@@ -3,7 +3,7 @@ install:
 
 test:
 	black --check .
-	pytest --cov 'rshanker779_common' --cov-fail-under 90
+	pytest --cov 'rshanker779_common' --cov-fail-under 95
 
 extras:
 	pip install .[snakeviz]
@@ -18,3 +18,6 @@ coverage:
 	coverage erase
 	make test
 	coverage html
+
+all: install format coverage
+
