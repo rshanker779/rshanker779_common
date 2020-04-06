@@ -1,6 +1,6 @@
 import cProfile
 import datetime
-import os
+import pathlib
 import subprocess
 import tempfile
 from typing import Callable
@@ -33,12 +33,10 @@ class Profiler:
             self.raw_function.__name__,
             datetime.datetime.now().strftime("%y_%m_%d_%H_%M_%S"),
         )
-        self.filename = os.path.join(self.temporary_directory, filename)
+        self.filename = pathlib.Path(self.temporary_directory, filename)
+
         cProfile.runctx("self._func()", globals(), locals(), self.filename)
 
     def get_snakeviz_visualisation(self):
         # Note this requires snakeviz lib, but since it uses subprocess it's not an explicit dependency
         subprocess.call(["snakeviz", self.filename])
-
-    def clean_up(self):
-        os.remove(self.filename)

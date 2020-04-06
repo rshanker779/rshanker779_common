@@ -52,8 +52,7 @@ class RegularRunnableThread(threading.Thread, abc.ABC):
             raise threading.ThreadError(
                 "Only one thread is allowed to run for this process"
             )
-        else:
-            self._process_map.add(process_name)
+        self._process_map.add(process_name)
 
     def stop_running(self):
         self.stop = True
