@@ -11,7 +11,16 @@ def example_function():
     return example_string_function
 
 
-def test_profiler(example_function):
-    profiler = utils.Profiler(example_function, 100, "xfsjkfljkslf", "fkdskfl")
+@pytest.fixture
+def profiler(example_function):
+    return utils.Profiler(example_function, 100, "xfsjkfljkslf", "fkdskfl")
+
+
+def test_profiler(profiler):
     profiler.profile()
     assert pathlib.Path(profiler.filename).is_file()
+
+
+def test_snakeviz_visualisation(profiler):
+    profiler.profile()
+    profiler.get_snakeviz_visualisation()

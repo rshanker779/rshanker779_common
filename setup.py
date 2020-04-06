@@ -12,8 +12,9 @@ setup(
         "pre-commit~=2.2",
         "pytest>5.4,<6",
         "pytest-cov~=2.8",
+        "snakeviz",
     ],
     packages=find_packages(),
     # TODO
-    extras_require={"snakeviz": ["snakeviz"], "docs": []},
+    extras_require={"docs": []},
 )

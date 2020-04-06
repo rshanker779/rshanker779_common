@@ -38,5 +38,4 @@ class Profiler:
         cProfile.runctx("self._func()", globals(), locals(), self.filename)
 
     def get_snakeviz_visualisation(self):
-        # Note this requires snakeviz lib, but since it uses subprocess it's not an explicit dependency
-        subprocess.call(["snakeviz", self.filename])
+        return subprocess.Popen(["snakeviz", self.filename])
