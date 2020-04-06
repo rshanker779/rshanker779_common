@@ -14,5 +14,6 @@ setup(
         "pytest-cov~=2.8",
     ],
     packages=find_packages(),
-    extras_require={"snakeviz": ["snakeviz"]},
+    # TODO
+    extras_require={"snakeviz": ["snakeviz"], "docs": []},
 )
