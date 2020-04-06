@@ -7,19 +7,20 @@ import pathlib
 logger = get_logger(__name__)
 
 
-def make_dirs(directory: Union[str, bytes]) -> Union[str, bytes]:
+def make_dirs(directory: Union[str, bytes]) -> pathlib.Path:
     """
 
     :param directory:
     :return:
     """
+    directory = pathlib.Path(directory)
     if not os.path.exists(directory):
         os.makedirs(directory)
     return directory
 
 
-def add_init_files(filepath: Union[str, bytes]):
-    for root, _, files in os.walk(filepath):
+def add_init_files(filepath: Union[str, bytes, pathlib.Path]):
+    for root, _, files in os.walk(pathlib.Path(filepath)):
         needs_init_file = any(i for i in files if i.endswith(".py") and i != "setup.py")
         has_init_file = any(i for i in files if i == "__init__.py")
         if needs_init_file and not has_init_file:

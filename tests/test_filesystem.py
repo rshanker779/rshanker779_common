@@ -16,14 +16,20 @@ def build_init_directories(tmp_path):
     yield
 
 
-def test_init_directories(tmpdir, build_init_directories):
-    utils.add_init_files(tmpdir)
-    assert not (tmpdir / "__init__.py").isfile()
-    assert (tmpdir / "a" / "__init__.py").isfile()
-    assert not (tmpdir / "a" / "b" / "__init__.py").isfile()
-    assert (tmpdir / "a" / "b" / "c" / "__init__.py").isfile()
+def test_init_directories(tmp_path, build_init_directories):
+    utils.add_init_files(tmp_path)
+    assert not (tmp_path / "__init__.py").is_file()
+    assert (tmp_path / "a" / "__init__.py").is_file()
+    assert not (tmp_path / "a" / "b" / "__init__.py").is_file()
+    assert (tmp_path / "a" / "b" / "c" / "__init__.py").is_file()
 
 
 def test_relative_path():
     assert utils.relative_path() == pathlib.Path(__file__).parent
     assert utils.relative_path("a", "b") == pathlib.Path(__file__).parent / "a" / "b"
+
+
+def test_make_dirs(tmp_path):
+    res = utils.make_dirs(tmp_path / "example")
+    assert (tmp_path / "example").is_dir()
+    assert res == (tmp_path / "example")
