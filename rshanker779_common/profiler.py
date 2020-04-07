@@ -38,4 +38,5 @@ class Profiler:
         cProfile.runctx("self._func()", globals(), locals(), self.filename)
 
     def get_snakeviz_visualisation(self):
-        return subprocess.Popen(["snakeviz", self.filename])
+        # pragma: no cover
+        return subprocess.run(["snakeviz", self.filename])

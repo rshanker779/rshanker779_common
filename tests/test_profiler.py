@@ -19,8 +19,3 @@ def profiler(example_function):
 def test_profiler(profiler):
     profiler.profile()
     assert pathlib.Path(profiler.filename).is_file()
-
-
-def test_snakeviz_visualisation(profiler):
-    profiler.profile()
-    profiler.get_snakeviz_visualisation()
