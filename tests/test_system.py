@@ -7,3 +7,7 @@ def test_system_hostname():
 
 def test_system_username():
     assert isinstance(utils.System.USERNAME, str)
+
+
+def test_platform():
+    assert isinstance(utils.System.PLATFORM, str)
