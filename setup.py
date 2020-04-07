@@ -16,5 +16,5 @@ setup(
     ],
     packages=find_packages(),
     # TODO
-    extras_require={"docs": []},
+    extras_require={"docs": ["sphinx"]},
 )

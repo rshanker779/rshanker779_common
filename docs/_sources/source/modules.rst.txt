@@ -5,4 +5,3 @@ rshanker779_common
    :maxdepth: 4
 
    rshanker779_common
-   setup
