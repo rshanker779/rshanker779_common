@@ -16,3 +16,14 @@ def time_it(f):
         return res
 
     return wrapper_func
+
+
+def catch_errors(f):
+    @wraps(f)
+    def wrapper_func(*args, **kwargs):
+        try:
+            return f(*args, **kwargs)
+        except Exception:
+            logger.exception(f"Error calling {f.__name__}")
+
+    return wrapper_func
