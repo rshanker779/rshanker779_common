@@ -23,5 +23,7 @@ def get_sys_out_handler() -> logging.Handler:
 
 def clear_handlers(logger: logging.Logger) -> logging.Logger:
     for handler in logger.handlers[:]:
+        handler.flush()
+        handler.close()
         logger.removeHandler(handler)
     return logger
