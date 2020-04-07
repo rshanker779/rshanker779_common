@@ -13,6 +13,7 @@ setup(
         "pytest>5.4,<6",
         "pytest-cov~=2.8",
         "snakeviz",
+        "wheel>0.33",
     ],
     packages=find_packages(),
     extras_require={"docs": ["sphinx"]},

@@ -1,5 +1,6 @@
 install:
-	python setup.py install
+	python setup.py sdist bdist_wheel
+	pip install .
 
 test:
 	black --check .
