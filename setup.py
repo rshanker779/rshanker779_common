@@ -8,7 +8,7 @@ setup(
     description="Common utilities",
     python_requires=">=3.7",
     install_requires=[
-        "black>18",
+        "black",
         "pre-commit~=2.2",
         "pytest>5.4,<6",
         "pytest-cov~=2.8",
