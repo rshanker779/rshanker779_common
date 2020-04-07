@@ -5,13 +5,11 @@ test:
 	black --check .
 	pytest --cov 'rshanker779_common' --cov-fail-under 95
 
-extras:
-	pip install .[snakeviz]
-
 format:
 	black .
 
 doc:
+	pip install .[docs]
 	sphinx-apidoc -f -o docsrc/source rshanker779_common
 	make -C docsrc github
 

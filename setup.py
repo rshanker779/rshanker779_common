@@ -15,6 +15,5 @@ setup(
         "snakeviz",
     ],
     packages=find_packages(),
-    # TODO
     extras_require={"docs": ["sphinx"]},
 )

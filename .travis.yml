@@ -4,5 +4,6 @@ python:
   - "3.7"
 install:
   - make install
+  - make doc
 script:
   - make test
