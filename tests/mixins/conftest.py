@@ -4,7 +4,7 @@ import pytest
 
 @pytest.fixture
 def A():
-    class A(utils.StringMixin, utils.EqualsMixin):
+    class A(utils.StringMixin, utils.EqualsMixin, utils.JSONMixin):
         a = 1
 
         def __init__(self, b):
