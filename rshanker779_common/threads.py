@@ -4,6 +4,7 @@ import logging
 import threading
 import time
 from typing import Hashable, Optional, Set
+import rshanker779_common as utils
 
 logger = logging.getLogger(__name__)
 
@@ -28,23 +29,19 @@ class RegularRunnableThread(threading.Thread, abc.ABC):
 
         self.process_id = None
         self.stop = False
+        self.do_task = utils.retry(
+            self.do_task, number_retries=float("inf"), time_retry=self.error_delay
+        )
         self.start()
 
     def run(self) -> None:
         while True:
-            try:
-                if self.stop:
-                    break
-                now = datetime.datetime.now()
-                if (
-                    self.last_run_time is None
-                    or now - self.last_run_time > self.interval
-                ):
-                    self.do_task()
-                    self.last_run_time = now
-            except Exception:
-                logger.exception("An error occurred")
-                time.sleep(self.error_delay.total_seconds())
+            if self.stop:
+                break
+            now = datetime.datetime.now()
+            if self.last_run_time is None or now - self.last_run_time > self.interval:
+                self.do_task()
+                self.last_run_time = now
 
     def stop_running(self):
         self.stop = True

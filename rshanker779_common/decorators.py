@@ -1,3 +1,4 @@
+import itertools
 import time
 import datetime
 from typing import Callable, Optional, Tuple, Any
@@ -37,10 +38,12 @@ class ErrorCatchDecorator:
     def __call__(self, f):
         @wraps(f)
         def wrapped_func(*args, **kwargs):
-            for _ in range(self.number_retries):
+            for i in itertools.count():
+                if i >= self.number_retries:
+                    break
                 try:
                     return f(*args, **kwargs)
-                except Exception:
+                except Exception as e:
                     logger.exception(
                         f"Error calling {f.__name__} with arguments {args}, {kwargs}"
                     )
