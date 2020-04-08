@@ -26,5 +26,8 @@ coverage:
 	make test
 	coverage html
 
+version:
+	bump2version --config-file .bumpversion.cfg $(BUMP)
+
 all: clean install format coverage
 
