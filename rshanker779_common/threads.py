@@ -1,9 +1,9 @@
+import abc
 import datetime
 import logging
 import threading
-import abc
-from typing import Hashable, Optional, Any, Set
 import time
+from typing import Hashable, Optional, Set
 
 logger = logging.getLogger(__name__)
 

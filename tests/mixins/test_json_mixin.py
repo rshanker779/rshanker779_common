@@ -1,5 +1,6 @@
-import rshanker779_common as utils
 import json
+
+import rshanker779_common as utils
 
 
 class InnerNested(utils.JSONMixin):

@@ -1,6 +1,6 @@
 import getpass
-import socket
 import platform
+import socket
 
 
 class System:

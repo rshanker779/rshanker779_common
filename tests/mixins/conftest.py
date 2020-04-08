@@ -1,5 +1,6 @@
-import rshanker779_common as utils
 import pytest
+
+import rshanker779_common as utils
 
 
 @pytest.fixture
