@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="rshanker779_common",
-    version="0.0.4",
+    version="0.0.5",
     author="rshanker779",
     author_email="rshanker779@gmail.com",
     description="Common utilities",
