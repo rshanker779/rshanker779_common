@@ -24,6 +24,8 @@ def catch_errors(f):
         try:
             return f(*args, **kwargs)
         except Exception:
-            logger.exception(f"Error calling {f.__name__}")
+            logger.exception(
+                f"Error calling {f.__name__} with arguments {args}, {kwargs}"
+            )
 
     return wrapper_func

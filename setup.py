@@ -13,6 +13,7 @@ setup(
         "pre-commit~=2.2",
         "pytest>5.4,<6",
         "pytest-cov~=2.8",
+        "requests<3",
         "snakeviz",
         "wheel>0.33",
     ],
