@@ -67,14 +67,30 @@
 </div>
 <div class="section" id="module-rshanker779_common.decorators">
 <span id="rshanker779-common-decorators-module"></span><h2>rshanker779_common.decorators module<a class="headerlink" href="#module-rshanker779_common.decorators" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="rshanker779_common.decorators.ErrorCatchDecorator">
+<em class="property">class </em><code class="sig-prename descclassname">rshanker779_common.decorators.</code><code class="sig-name descname">ErrorCatchDecorator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">number_retries</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">time_retry</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>datetime.timedelta<span class="p">]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rshanker779_common.decorators.ErrorCatchDecorator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
 <dl class="py function">
 <dt id="rshanker779_common.decorators.catch_errors">
 <code class="sig-prename descclassname">rshanker779_common.decorators.</code><code class="sig-name descname">catch_errors</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rshanker779_common.decorators.catch_errors" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
+<dt id="rshanker779_common.decorators.function_timer">
+<code class="sig-prename descclassname">rshanker779_common.decorators.</code><code class="sig-name descname">function_timer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span><span class="p">:</span> <span class="n">Callable</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; Tuple<span class="p">[</span>Any<span class="p">, </span>float<span class="p">]</span><a class="headerlink" href="#rshanker779_common.decorators.function_timer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="rshanker779_common.decorators.retry">
+<code class="sig-prename descclassname">rshanker779_common.decorators.</code><code class="sig-name descname">retry</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">number_retries</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_retry</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rshanker779_common.decorators.retry" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
 <dt id="rshanker779_common.decorators.time_it">
-<code class="sig-prename descclassname">rshanker779_common.decorators.</code><code class="sig-name descname">time_it</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rshanker779_common.decorators.time_it" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rshanker779_common.decorators.</code><code class="sig-name descname">time_it</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span><span class="p">:</span> <span class="n">Callable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rshanker779_common.decorators.time_it" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -123,7 +139,7 @@
 <span id="rshanker779-common-profiler-module"></span><h2>rshanker779_common.profiler module<a class="headerlink" href="#module-rshanker779_common.profiler" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="rshanker779_common.profiler.Profiler">
-<em class="property">class </em><code class="sig-prename descclassname">rshanker779_common.profiler.</code><code class="sig-name descname">Profiler</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">function</span><span class="p">:</span> <span class="n">Callable</span></em>, <em class="sig-param"><span class="n">num_iterations</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">100</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rshanker779_common.profiler.Profiler" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">rshanker779_common.profiler.</code><code class="sig-name descname">Profiler</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">function</span><span class="p">:</span> <span class="n">Callable</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="n">num_iterations</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rshanker779_common.profiler.Profiler" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
 <dt id="rshanker779_common.profiler.Profiler.get_snakeviz_visualisation">
@@ -143,6 +159,11 @@
 <dl class="py function">
 <dt id="rshanker779_common.scraping.format_header_string">
 <code class="sig-prename descclassname">rshanker779_common.scraping.</code><code class="sig-name descname">format_header_string</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">header_string</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; Dict<span class="p">[</span>str<span class="p">, </span>str<span class="p">]</span><a class="headerlink" href="#rshanker779_common.scraping.format_header_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="rshanker779_common.scraping.get_requests_session">
+<code class="sig-prename descclassname">rshanker779_common.scraping.</code><code class="sig-name descname">get_requests_session</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; requests.sessions.Session<a class="headerlink" href="#rshanker779_common.scraping.get_requests_session" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
