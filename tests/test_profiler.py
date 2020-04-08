@@ -13,11 +13,16 @@ def example_function():
     return example_string_function
 
 
-@pytest.fixture
-def profiler(example_function):
-    return utils.Profiler(example_function, 100, "xfsjkfljkslf", "fkdskfl")
-
-
-def test_profiler(profiler):
+def test_profiler(example_function):
+    profiler = utils.Profiler(
+        example_function, num_iterations=100, x="xfsjkfljkslf", y="fkdskfl"
+    )
     profiler.profile()
     assert pathlib.Path(profiler.filename).is_file()
+
+
+def test_profiler_estimation(example_function):
+    profiler = utils.Profiler(example_function, "afdjkla", "dsajdknsa")
+    profiler.profile()
+    assert profiler.num_iterations > 100_000
+    assert profiler.num_iterations < 300_000

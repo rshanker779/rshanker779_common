@@ -3,11 +3,16 @@ import datetime
 import pathlib
 import subprocess
 import tempfile
-from typing import Callable
+from typing import Callable, Optional
+import rshanker779_common as utils
+
+logger = utils.get_logger(__name__)
 
 
 class Profiler:
-    def __init__(self, function: Callable, num_iterations: int = 100, *args, **kwargs):
+    def __init__(
+        self, function: Callable, *args, num_iterations: Optional[int] = None, **kwargs
+    ):
         """
         :param function: Any function
         :param num_iteration: Number of calls to function
@@ -17,10 +22,12 @@ class Profiler:
         self.raw_function = function
         self.num_iterations = num_iterations
         self.filename = None
-        # TODO - measure function once to estimate profiling iterations
-        # Output to a temp dir
-        # write some more generic decorators
-        # TODO this should be able to be used as a decorator
+        if num_iterations is None:
+            _, elapsed = utils.function_timer(self.raw_function, *args, **kwargs)
+            estimated_iterations = int(1 / elapsed)
+            logger.info(f"Running profile with {estimated_iterations} iterations")
+            self.num_iterations = estimated_iterations
+
         def func():
             for _ in range(self.num_iterations):
                 function(*args, **kwargs)
