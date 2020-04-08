@@ -9,6 +9,7 @@ setup(
     python_requires=">=3.7",
     install_requires=[
         "black",
+        "bump2version>=1.0.0",
         "pre-commit~=2.2",
         "pytest>5.4,<6",
         "pytest-cov~=2.8",
