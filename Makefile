@@ -23,7 +23,7 @@ clean:
 
 coverage:
 	coverage erase
-	make test
+	pytest --cov 'rshanker779_common'
 	coverage html
 
 version:
