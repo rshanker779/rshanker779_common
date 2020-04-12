@@ -1,4 +1,11 @@
+import pathlib
+
 from setuptools import setup, find_packages
+
+try:
+    long_description = (pathlib.Path(__file__).parent / "README.md").read_text()
+except:
+    long_description = None
 
 setup(
     name="rshanker779_common",
