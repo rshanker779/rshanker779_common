@@ -1,4 +1,5 @@
 install: clean
+	pip install --upgrade setuptools wheel
 	python setup.py sdist bdist_wheel
 	pip install dist/*.whl
 
