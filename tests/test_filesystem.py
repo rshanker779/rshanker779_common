@@ -33,3 +33,12 @@ def test_make_dirs(tmp_path):
     res = utils.make_dirs(tmp_path / "example")
     assert (tmp_path / "example").is_dir()
     assert res == (tmp_path / "example")
+
+
+def test_path_has_pathlib_attributes(tmp_path):
+    example_path = utils.Path(tmp_path)
+    assert hasattr(example_path, "glob")
+    assert not example_path.ls()
+    assert isinstance(example_path / "b", utils.Path)
+    (example_path / "a.txt").write_text("a")
+    assert len(example_path.ls()) == 1

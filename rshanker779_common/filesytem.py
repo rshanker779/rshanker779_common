@@ -1,11 +1,34 @@
 import inspect
 import os
 import pathlib
-from typing import Union
+from typing import Union, Iterable, List
 
 from rshanker779_common import get_logger
 
 logger = get_logger(__name__)
+
+
+class Path:
+    def __init__(self, path: Union[str, pathlib.Path]):
+        self.path = pathlib.Path(path)
+
+    def __getattr__(self, item: str):
+        return getattr(self.path, item)
+
+    def ls(self) -> List:
+        return [self.__class__(p) for p in self.path.glob("*")]
+
+    def __dir__(self) -> Iterable[str]:
+        return super().__dir__() + dir(self.path)
+
+    def __truediv__(self, other):
+        return self.__class__(self.path / other)
+
+
+def relative_path(*args: str) -> pathlib.Path:
+    frame = inspect.stack()[1]
+    file_path = pathlib.Path(frame.filename)
+    return pathlib.Path(file_path.parent, *args)
 
 
 def make_dirs(directory: Union[str, bytes]) -> pathlib.Path:
@@ -21,9 +44,3 @@ def add_init_files(filepath: Union[str, bytes, pathlib.Path]):
         if needs_init_file and not has_init_file:
             logger.info("Adding init file to directory %s", root)
             pathlib.Path(root, "__init__.py").write_text("")
-
-
-def relative_path(*args: str) -> pathlib.Path:
-    frame = inspect.stack()[1]
-    file_path = pathlib.Path(frame.filename)
-    return pathlib.Path(file_path.parent, *args)

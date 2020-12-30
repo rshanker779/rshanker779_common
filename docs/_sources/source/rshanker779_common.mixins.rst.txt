@@ -28,7 +28,6 @@ rshanker779\_common.mixins.string\_mixin module
    :undoc-members:
    :show-inheritance:
 
-
 Module contents
 ---------------
 

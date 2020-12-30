@@ -10,3 +10,4 @@ dist/*
 docsrc/_build/*
 *.coverage
 htmlcov/*
+*_static*
