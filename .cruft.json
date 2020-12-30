@@ -1,6 +1,6 @@
 {
     "template": "https://github.com/rshanker779/cookie-cutter-rshanker779.git",
-    "commit": "d680e61acc9c19352de13e28097ee58fdaaf382d",
+    "commit": "dad1a0ad574a2de9e92c482fd59fa5150218beb9",
     "context": {
         "cookiecutter": {
             "project_name": "rshanker779_common",
