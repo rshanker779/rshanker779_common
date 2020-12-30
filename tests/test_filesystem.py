@@ -25,14 +25,16 @@ def test_init_directories(tmp_path, build_init_directories):
 
 
 def test_relative_path():
-    assert utils.relative_path() == pathlib.Path(__file__).parent
-    assert utils.relative_path("a", "b") == pathlib.Path(__file__).parent / "a" / "b"
+    assert utils.relative_path().path == pathlib.Path(__file__).parent
+    assert (
+        utils.relative_path("a", "b").path == pathlib.Path(__file__).parent / "a" / "b"
+    )
 
 
 def test_make_dirs(tmp_path):
     res = utils.make_dirs(tmp_path / "example")
     assert (tmp_path / "example").is_dir()
-    assert res == (tmp_path / "example")
+    assert res.path == (tmp_path / "example")
 
 
 def test_path_has_pathlib_attributes(tmp_path):
@@ -42,3 +44,4 @@ def test_path_has_pathlib_attributes(tmp_path):
     assert isinstance(example_path / "b", utils.Path)
     (example_path / "a.txt").write_text("a")
     assert len(example_path.ls()) == 1
+    assert "glob" in dir(example_path)
