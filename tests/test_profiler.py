@@ -24,5 +24,5 @@ def test_profiler(example_function):
 def test_profiler_estimation(example_function):
     profiler = utils.Profiler(example_function, "afdjkla", "dsajdknsa")
     profiler.profile()
-    assert profiler.num_iterations > 100_000
-    assert profiler.num_iterations < 300_000
+    assert profiler.num_iterations > 10_000
+    assert profiler.num_iterations < 1_000_000

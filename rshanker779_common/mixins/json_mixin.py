@@ -1,4 +1,5 @@
 import json
+import datetime
 
 
 class JSONMixin:
@@ -19,4 +20,6 @@ class JSONMixin:
             }
         elif isinstance(value, (list, tuple, set)):
             return [self.__convert_item(i) for i in value]
+        elif isinstance(value, datetime.timedelta):
+            return value.total_seconds()
         return value
