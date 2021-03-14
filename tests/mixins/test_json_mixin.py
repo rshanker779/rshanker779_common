@@ -14,6 +14,12 @@ class B(utils.JSONMixin):
         self.b = (1, 2, 3)
 
 
+class HiddenAttributeC(utils.JSONMixin):
+    def __init__(self):
+        self._a = 1
+        self.b = 2
+
+
 def test_json_mixin(A):
     res = json.loads(A(3).to_json())
     assert res == {"b": 3, "d": "a", "e": [1, 2, 3]}
@@ -22,3 +28,8 @@ def test_json_mixin(A):
 def test_nested_classes():
     res = json.loads(B().to_json())
     assert res == {"b": [1, 2, 3], "a": {"InnerNested": {"a": 1}}}
+
+
+def test_hidden_attributes():
+    res = json.loads(HiddenAttributeC().to_json())
+    assert res == {"b": 2}
