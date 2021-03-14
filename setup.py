@@ -9,7 +9,7 @@ except:
 
 setup(
     name="rshanker779_common",
-    version="0.0.11",
+    version="0.1.0",
     author="rshanker779",
     author_email="rshanker779@gmail.com",
     description="Common utilities",
