@@ -1,13 +1,13 @@
-import rshanker779_common as utils
+from rshanker779_common.system import System
 
 
 def test_system_hostname():
-    assert isinstance(utils.System.HOSTNAME, str)
+    assert isinstance(System.HOSTNAME, str)
 
 
 def test_system_username():
-    assert isinstance(utils.System.USERNAME, str)
+    assert isinstance(System.USERNAME, str)
 
 
 def test_platform():
-    assert isinstance(utils.System.PLATFORM, str)
+    assert isinstance(System.PLATFORM, str)

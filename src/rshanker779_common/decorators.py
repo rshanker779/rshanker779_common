@@ -4,7 +4,7 @@ import time
 from functools import wraps
 from typing import Callable, Optional, Tuple, Any
 
-from rshanker779_common import get_logger
+from rshanker779_common.logger import get_logger
 
 logger = get_logger(__name__)
 
