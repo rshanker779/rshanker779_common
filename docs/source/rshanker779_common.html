@@ -1,17 +1,18 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>rshanker779_common package &#8212; rshanker779_common  documentation</title>
-    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
    
@@ -30,200 +31,51 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="rshanker779-common-package">
+  <section id="rshanker779-common-package">
 <h1>rshanker779_common package<a class="headerlink" href="#rshanker779-common-package" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="subpackages">
+<section id="subpackages">
 <h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="rshanker779_common.mixins.html">rshanker779_common.mixins package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="rshanker779_common.mixins.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rshanker779_common.mixins.html#module-rshanker779_common.mixins.equals_mixin">rshanker779_common.mixins.equals_mixin module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rshanker779_common.mixins.html#module-rshanker779_common.mixins.json_mixin">rshanker779_common.mixins.json_mixin module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rshanker779_common.mixins.html#module-rshanker779_common.mixins.string_mixin">rshanker779_common.mixins.string_mixin module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rshanker779_common.mixins.html#module-rshanker779_common.mixins">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rshanker779_common.mixins.html#rshanker779-common-mixins-equals-mixin-module">rshanker779_common.mixins.equals_mixin module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rshanker779_common.mixins.html#rshanker779-common-mixins-json-mixin-module">rshanker779_common.mixins.json_mixin module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rshanker779_common.mixins.html#rshanker779-common-mixins-string-mixin-module">rshanker779_common.mixins.string_mixin module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rshanker779_common.mixins.html#module-contents">Module contents</a></li>
 </ul>
 </li>
 </ul>
 </div>
-</div>
-<div class="section" id="submodules">
+</section>
+<section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="module-rshanker779_common.cache">
-<span id="rshanker779-common-cache-module"></span><h2>rshanker779_common.cache module<a class="headerlink" href="#module-rshanker779_common.cache" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt id="rshanker779_common.cache.Cache">
-<em class="property">class </em><code class="sig-prename descclassname">rshanker779_common.cache.</code><code class="sig-name descname">Cache</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">strategies</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#rshanker779_common.cache.CachingStrategy" title="rshanker779_common.cache.CachingStrategy">rshanker779_common.cache.CachingStrategy</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rshanker779_common.cache.Cache" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-</dd></dl>
-
-<dl class="py class">
-<dt id="rshanker779_common.cache.CachingStrategy">
-<em class="property">class </em><code class="sig-prename descclassname">rshanker779_common.cache.</code><code class="sig-name descname">CachingStrategy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attr_name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">load_method</span><span class="p">:</span> <span class="n">Callable<span class="p">[</span><span class="p">]</span><span class="p">, </span>Any<span class="p">]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rshanker779_common.cache.CachingStrategy" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-</dd></dl>
-
-</div>
-<div class="section" id="module-rshanker779_common.decorators">
-<span id="rshanker779-common-decorators-module"></span><h2>rshanker779_common.decorators module<a class="headerlink" href="#module-rshanker779_common.decorators" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt id="rshanker779_common.decorators.ErrorCatchDecorator">
-<em class="property">class </em><code class="sig-prename descclassname">rshanker779_common.decorators.</code><code class="sig-name descname">ErrorCatchDecorator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">number_retries</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">time_retry</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>datetime.timedelta<span class="p">]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rshanker779_common.decorators.ErrorCatchDecorator" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-</dd></dl>
-
-<dl class="py function">
-<dt id="rshanker779_common.decorators.catch_errors">
-<code class="sig-prename descclassname">rshanker779_common.decorators.</code><code class="sig-name descname">catch_errors</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rshanker779_common.decorators.catch_errors" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt id="rshanker779_common.decorators.function_timer">
-<code class="sig-prename descclassname">rshanker779_common.decorators.</code><code class="sig-name descname">function_timer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span><span class="p">:</span> <span class="n">Callable</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; Tuple<span class="p">[</span>Any<span class="p">, </span>float<span class="p">]</span><a class="headerlink" href="#rshanker779_common.decorators.function_timer" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt id="rshanker779_common.decorators.retry">
-<code class="sig-prename descclassname">rshanker779_common.decorators.</code><code class="sig-name descname">retry</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">number_retries</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_retry</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rshanker779_common.decorators.retry" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt id="rshanker779_common.decorators.time_it">
-<code class="sig-prename descclassname">rshanker779_common.decorators.</code><code class="sig-name descname">time_it</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span><span class="p">:</span> <span class="n">Callable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rshanker779_common.decorators.time_it" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</div>
-<div class="section" id="module-rshanker779_common.filesytem">
-<span id="rshanker779-common-filesytem-module"></span><h2>rshanker779_common.filesytem module<a class="headerlink" href="#module-rshanker779_common.filesytem" title="Permalink to this headline">¶</a></h2>
-<dl class="py function">
-<dt id="rshanker779_common.filesytem.add_init_files">
-<code class="sig-prename descclassname">rshanker779_common.filesytem.</code><code class="sig-name descname">add_init_files</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filepath</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>bytes<span class="p">, </span>pathlib.Path<span class="p">]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rshanker779_common.filesytem.add_init_files" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt id="rshanker779_common.filesytem.make_dirs">
-<code class="sig-prename descclassname">rshanker779_common.filesytem.</code><code class="sig-name descname">make_dirs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">directory</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>bytes<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; pathlib.Path<a class="headerlink" href="#rshanker779_common.filesytem.make_dirs" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt id="rshanker779_common.filesytem.relative_path">
-<code class="sig-prename descclassname">rshanker779_common.filesytem.</code><code class="sig-name descname">relative_path</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; pathlib.Path<a class="headerlink" href="#rshanker779_common.filesytem.relative_path" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</div>
-<div class="section" id="module-rshanker779_common.logger">
-<span id="rshanker779-common-logger-module"></span><h2>rshanker779_common.logger module<a class="headerlink" href="#module-rshanker779_common.logger" title="Permalink to this headline">¶</a></h2>
-<dl class="py function">
-<dt id="rshanker779_common.logger.clear_handlers">
-<code class="sig-prename descclassname">rshanker779_common.logger.</code><code class="sig-name descname">clear_handlers</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">logger</span><span class="p">:</span> <span class="n">logging.Logger</span></em><span class="sig-paren">)</span> &#x2192; logging.Logger<a class="headerlink" href="#rshanker779_common.logger.clear_handlers" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt id="rshanker779_common.logger.get_default_formatter">
-<code class="sig-prename descclassname">rshanker779_common.logger.</code><code class="sig-name descname">get_default_formatter</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; logging.Formatter<a class="headerlink" href="#rshanker779_common.logger.get_default_formatter" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt id="rshanker779_common.logger.get_logger">
-<code class="sig-prename descclassname">rshanker779_common.logger.</code><code class="sig-name descname">get_logger</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">level</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">10</span></em><span class="sig-paren">)</span> &#x2192; logging.Logger<a class="headerlink" href="#rshanker779_common.logger.get_logger" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt id="rshanker779_common.logger.get_sys_out_handler">
-<code class="sig-prename descclassname">rshanker779_common.logger.</code><code class="sig-name descname">get_sys_out_handler</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; logging.Handler<a class="headerlink" href="#rshanker779_common.logger.get_sys_out_handler" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</div>
-<div class="section" id="module-rshanker779_common.profiler">
-<span id="rshanker779-common-profiler-module"></span><h2>rshanker779_common.profiler module<a class="headerlink" href="#module-rshanker779_common.profiler" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt id="rshanker779_common.profiler.Profiler">
-<em class="property">class </em><code class="sig-prename descclassname">rshanker779_common.profiler.</code><code class="sig-name descname">Profiler</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">function</span><span class="p">:</span> <span class="n">Callable</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="n">num_iterations</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rshanker779_common.profiler.Profiler" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py method">
-<dt id="rshanker779_common.profiler.Profiler.get_snakeviz_visualisation">
-<code class="sig-name descname">get_snakeviz_visualisation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rshanker779_common.profiler.Profiler.get_snakeviz_visualisation" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="rshanker779_common.profiler.Profiler.profile">
-<code class="sig-name descname">profile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rshanker779_common.profiler.Profiler.profile" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-rshanker779_common.scraping">
-<span id="rshanker779-common-scraping-module"></span><h2>rshanker779_common.scraping module<a class="headerlink" href="#module-rshanker779_common.scraping" title="Permalink to this headline">¶</a></h2>
-<dl class="py function">
-<dt id="rshanker779_common.scraping.format_header_string">
-<code class="sig-prename descclassname">rshanker779_common.scraping.</code><code class="sig-name descname">format_header_string</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">header_string</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; Dict<span class="p">[</span>str<span class="p">, </span>str<span class="p">]</span><a class="headerlink" href="#rshanker779_common.scraping.format_header_string" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt id="rshanker779_common.scraping.get_requests_session">
-<code class="sig-prename descclassname">rshanker779_common.scraping.</code><code class="sig-name descname">get_requests_session</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; requests.sessions.Session<a class="headerlink" href="#rshanker779_common.scraping.get_requests_session" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</div>
-<div class="section" id="module-rshanker779_common.system">
-<span id="rshanker779-common-system-module"></span><h2>rshanker779_common.system module<a class="headerlink" href="#module-rshanker779_common.system" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt id="rshanker779_common.system.System">
-<em class="property">class </em><code class="sig-prename descclassname">rshanker779_common.system.</code><code class="sig-name descname">System</code><a class="headerlink" href="#rshanker779_common.system.System" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py attribute">
-<dt id="rshanker779_common.system.System.HOSTNAME">
-<code class="sig-name descname">HOSTNAME</code><em class="property"> = 'rohan-AB350-Gaming-3'</em><a class="headerlink" href="#rshanker779_common.system.System.HOSTNAME" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="rshanker779_common.system.System.PLATFORM">
-<code class="sig-name descname">PLATFORM</code><em class="property"> = 'Linux'</em><a class="headerlink" href="#rshanker779_common.system.System.PLATFORM" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="rshanker779_common.system.System.USERNAME">
-<code class="sig-name descname">USERNAME</code><em class="property"> = 'rohan'</em><a class="headerlink" href="#rshanker779_common.system.System.USERNAME" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-rshanker779_common.threads">
-<span id="rshanker779-common-threads-module"></span><h2>rshanker779_common.threads module<a class="headerlink" href="#module-rshanker779_common.threads" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt id="rshanker779_common.threads.RegularRunnableThread">
-<em class="property">class </em><code class="sig-prename descclassname">rshanker779_common.threads.</code><code class="sig-name descname">RegularRunnableThread</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">interval</span><span class="p">:</span> <span class="n">datetime.timedelta</span></em>, <em class="sig-param"><span class="n">daemon</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="n">error_delay</span><span class="p">:</span> <span class="n">datetime.timedelta</span> <span class="o">=</span> <span class="default_value">datetime.timedelta(seconds=5)</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rshanker779_common.threads.RegularRunnableThread" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">threading.Thread</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
-<dl class="py method">
-<dt id="rshanker779_common.threads.RegularRunnableThread.do_task">
-<em class="property">abstract </em><code class="sig-name descname">do_task</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#rshanker779_common.threads.RegularRunnableThread.do_task" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="rshanker779_common.threads.RegularRunnableThread.run">
-<code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#rshanker779_common.threads.RegularRunnableThread.run" title="Permalink to this definition">¶</a></dt>
-<dd><p>Method representing the thread’s activity.</p>
-<p>You may override this method in a subclass. The standard run() method
-invokes the callable object passed to the object’s constructor as the
-target argument, if any, with sequential and keyword arguments taken
-from the args and kwargs arguments, respectively.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="rshanker779_common.threads.RegularRunnableThread.stop_running">
-<code class="sig-name descname">stop_running</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rshanker779_common.threads.RegularRunnableThread.stop_running" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-rshanker779_common">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-rshanker779_common" title="Permalink to this headline">¶</a></h2>
-</div>
-</div>
+</section>
+<section id="rshanker779-common-decorators-module">
+<h2>rshanker779_common.decorators module<a class="headerlink" href="#rshanker779-common-decorators-module" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="rshanker779-common-filesytem-module">
+<h2>rshanker779_common.filesytem module<a class="headerlink" href="#rshanker779-common-filesytem-module" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="rshanker779-common-logger-module">
+<h2>rshanker779_common.logger module<a class="headerlink" href="#rshanker779-common-logger-module" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="rshanker779-common-profiler-module">
+<h2>rshanker779_common.profiler module<a class="headerlink" href="#rshanker779-common-profiler-module" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="rshanker779-common-scraping-module">
+<h2>rshanker779_common.scraping module<a class="headerlink" href="#rshanker779-common-scraping-module" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="rshanker779-common-system-module">
+<h2>rshanker779_common.system module<a class="headerlink" href="#rshanker779-common-system-module" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="rshanker779-common-threads-module">
+<h2>rshanker779_common.threads module<a class="headerlink" href="#rshanker779-common-threads-module" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-contents">
+<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
 
 
           </div>
@@ -254,7 +106,7 @@ from the args and kwargs arguments, respectively.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -276,7 +128,7 @@ from the args and kwargs arguments, respectively.</p>
       &copy;2019, rshanker779.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.3.2</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

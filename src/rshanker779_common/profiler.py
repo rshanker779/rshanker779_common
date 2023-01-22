@@ -4,9 +4,11 @@ import pathlib
 import subprocess
 import tempfile
 from typing import Callable, Optional
-import rshanker779_common as utils
 
-logger = utils.get_logger(__name__)
+from rshanker779_common.decorators import function_timer
+from rshanker779_common.logger import get_logger
+
+logger = get_logger(__name__)
 
 
 class Profiler:
@@ -23,7 +25,7 @@ class Profiler:
         self.num_iterations = num_iterations
         self.filename = None
         if num_iterations is None:
-            _, elapsed = utils.function_timer(self.raw_function, *args, **kwargs)
+            _, elapsed = function_timer(self.raw_function, *args, **kwargs)
             estimated_iterations = int(1 / elapsed)
             logger.info(f"Running profile with {estimated_iterations} iterations")
             self.num_iterations = estimated_iterations

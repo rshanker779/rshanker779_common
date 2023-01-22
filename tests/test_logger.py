@@ -1,7 +1,7 @@
-import rshanker779_common as utils
+from rshanker779_common.logger import clear_handlers, get_logger
 
 
 def test_clear_handler():
-    logger = utils.get_logger(__name__)
-    logger = utils.clear_handlers(logger)
+    logger = get_logger(__name__)
+    logger = clear_handlers(logger)
     assert not logger.handlers

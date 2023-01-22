@@ -12,14 +12,6 @@ Subpackages
 Submodules
 ----------
 
-rshanker779\_common.cache module
---------------------------------
-
-.. automodule:: rshanker779_common.cache
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 rshanker779\_common.decorators module
 -------------------------------------
 
@@ -75,7 +67,6 @@ rshanker779\_common.threads module
    :members:
    :undoc-members:
    :show-inheritance:
-
 
 Module contents
 ---------------

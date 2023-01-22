@@ -2,9 +2,9 @@ import abc
 import datetime
 import logging
 import threading
-import time
 from typing import Hashable, Optional, Set
-import rshanker779_common as utils
+
+from rshanker779_common.decorators import retry
 
 logger = logging.getLogger(__name__)
 
@@ -29,7 +29,7 @@ class RegularRunnableThread(threading.Thread, abc.ABC):
 
         self.process_id = None
         self.stop = False
-        self.do_task = utils.retry(
+        self.do_task = retry(
             self.do_task, number_retries=float("inf"), time_retry=self.error_delay
         )
         self.start()
