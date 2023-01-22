@@ -26,7 +26,11 @@ coverage:
 	coverage html
 
 version:
-	bump2version --config-file .bumpversion.cfg $(BUMP)
+	poetry verision $(BUMP)
+
+pypi:
+	poetry build
+	poetry run python -m twine upload --repository pypi dist/*
 
 all: install format coverage
 
