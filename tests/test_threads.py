@@ -1,5 +1,4 @@
 import datetime
-import logging
 import time
 
 from rshanker779_common.threads import RegularRunnableThread
@@ -26,9 +25,7 @@ def test_thread(capfd):
 
 
 def test_error_thread(caplog):
-    # with caplog.at_level(logging.ERROR):
     r = ErrorRunnable(datetime.timedelta(microseconds=1), daemon=True)
-    time.sleep(0.001)
-    print(caplog.messages)
+    time.sleep(0.01)
     assert len(caplog.messages) == 1
     assert "Error calling do_task" in caplog.messages[0]

@@ -1,18 +1,16 @@
-install: clean
-	pip install --upgrade setuptools wheel
-	python setup.py sdist bdist_wheel
-	pip install dist/*.whl
+install:
+	poetry install
 
 test:
-	black --check .
-	pytest --cov 'rshanker779_common' --cov-fail-under 95
+	poetry run black --check .
+	poetry run pytest --cov 'rshanker779_common' --cov-fail-under 95
 
 format:
-	black .
+	poetry run black .
 
 doc:
-	pip install .[docs]
-	sphinx-apidoc -f -o docsrc/source rshanker779_common
+	poetry install --with docs
+	poetry run sphinx-apidoc -f -o docsrc/source src/rshanker779_common
 	make -C docsrc github
 
 clean:

@@ -3,7 +3,7 @@ import os
 import pathlib
 from typing import Union, Iterable, List
 
-from rshanker779_common import get_logger
+from rshanker779_common.logger import get_logger
 
 logger = get_logger(__name__)
 

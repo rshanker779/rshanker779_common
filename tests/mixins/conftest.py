@@ -1,11 +1,11 @@
 import pytest
 
-import rshanker779_common as utils
+from rshanker779_common.mixins import JSONMixin, EqualsMixin, StringMixin
 
 
 @pytest.fixture
 def A():
-    class A(utils.StringMixin, utils.EqualsMixin, utils.JSONMixin):
+    class A(StringMixin, EqualsMixin, JSONMixin):
         a = 1
 
         def __init__(self, b):

@@ -1,27 +1,27 @@
 import datetime
 import json
 
-import rshanker779_common as utils
+from rshanker779_common.mixins import JSONMixin
 
 
-class InnerNested(utils.JSONMixin):
+class InnerNested(JSONMixin):
     def __init__(self):
         self.a = 1
 
 
-class B(utils.JSONMixin):
+class B(JSONMixin):
     def __init__(self):
         self.a = InnerNested()
         self.b = (1, 2, 3)
 
 
-class HiddenAttributeC(utils.JSONMixin):
+class HiddenAttributeC(JSONMixin):
     def __init__(self):
         self._a = 1
         self.b = 2
 
 
-class DatetimeD(utils.JSONMixin):
+class DatetimeD(JSONMixin):
     def __init__(self):
         self.a = datetime.timedelta(days=1, seconds=2, milliseconds=3)
 

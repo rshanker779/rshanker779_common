@@ -1,6 +1,7 @@
-import rshanker779_common as utils
 import pytest
 import requests as r
+
+from rshanker779_common.scraping import get_requests_session, format_header_string
 
 
 def test_format_header_string():
@@ -29,11 +30,11 @@ def test_format_header_string():
         "DNT": "1",
         "If-None-Match": 'W/"402f7-0Hc3CLUUujBhc3udatbw53n67J4"',
     }
-    assert utils.format_header_string(headers) == expected
+    assert format_header_string(headers) == expected
 
 
 def test_session():
-    s = utils.get_requests_session()
+    s = get_requests_session()
     with pytest.raises(r.exceptions.RequestException) as e:
         s.get("http://bbc.co.uk/made_up_page")
     assert "404" in str(e.value)

@@ -2,26 +2,26 @@ import datetime
 import logging
 import time
 
-import rshanker779_common as utils
+from rshanker779_common.decorators import retry, time_it, catch_errors
 
 
-@utils.time_it
+@time_it
 def example_function():
     return 1
 
 
-@utils.catch_errors
+@catch_errors
 def error_function():
     raise ValueError
 
 
-@utils.retry(number_retries=2, time_retry=datetime.timedelta(milliseconds=10))
+@retry(number_retries=2, time_retry=datetime.timedelta(milliseconds=10))
 def error_function_2():
     print(1)
     raise ValueError
 
 
-@utils.retry
+@retry
 def error_function_3():
     print(1)
     raise ValueError
